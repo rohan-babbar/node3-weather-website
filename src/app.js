@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const app = express()
+const port = process.env.PORT || 3000
 //console.log(__dirname) // dirname = directory name, dirname here refers to src. i.e path to the folder this file lives in
 // console.log(path.join(__dirname,'../public')) //path to the folder we wanna serve up
 //Define Paths for Express Config
@@ -109,6 +110,6 @@ res.render('404',{
     errorMessage :'Page Not Found'
 })
 })
-app.listen(3000,()=>{
-    console.log('Server Is Up On 3000 Port')
+app.listen(port,()=>{
+    console.log('Server Is Up On Port'+port)
 })
